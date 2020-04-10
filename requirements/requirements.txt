@@ -1,0 +1,20 @@
+asgiref==3.2.7
+certifi==2020.4.5.1
+chardet==3.0.4
+coverage==5.0.4
+defusedxml==0.6.0
+Django==3.0.5
+django-debug-toolbar==2.2
+djangorestframework==3.11.0
+idna==2.9
+oauthlib==3.1.0
+PyJWT==1.7.1
+-e git://github.com/omab/python-social-auth.git@6b1e301c7960827fbeeff13d580f790b297cf791#egg=python_social_auth
+python3-openid==3.1.0
+pytz==2019.3
+requests==2.23.0
+requests-oauthlib==1.3.0
+selenium==3.141.0
+six==1.14.0
+sqlparse==0.3.1
+urllib3==1.25.8
