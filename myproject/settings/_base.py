@@ -17,6 +17,8 @@ import json
 
 from django.core.exceptions import ImproperlyConfigured
 
+from myproject.apps.core.versioning import get_git_changeset_timestamp
+
 # env_vars = os.environ
 
 try:
@@ -47,6 +49,15 @@ EXTERNAL_LIBS_PATH = os.path.join(EXTERNAL_BASE, "libs")
 EXTERNAL_APPS_PATH = os.path.join(EXTERNAL_BASE, "apps")
 
 sys.path = ["", EXTERNAL_LIBS_PATH, EXTERNAL_APPS_PATH] + sys.path
+
+timestamp = get_git_changeset_timestamp(BASE_DIR)
+
+# if some cases in which we don't have access to github
+# with open(os.path.join(BASE_DIR, 'myproject', 'settings',
+#       'last-update.txt'), 'r') as f:
+#   timestamp = f.readline().strip()
+
+STATIC_URL = f'/static/{timestamp}'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
